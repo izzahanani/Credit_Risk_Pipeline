@@ -1,0 +1,70 @@
+{
+  "champion": "XGBoost",
+  "trained_at_utc": "2026-11-19T15:23:49+00:00",
+  "selection_metric": "test_roc_auc",
+  "n_train": 3959,
+  "n_test": 990,
+  "numeric_features": [
+    "age",
+    "annual_income",
+    "debt_to_income_ratio",
+    "macro_interest_rate",
+    "credit_limit",
+    "months_on_book",
+    "past_default_count",
+    "avg_revolving_balance_last_6m",
+    "credit_utilisation_last_6m"
+  ],
+  "categorical_features": [
+    "loan_type"
+  ],
+  "results": {
+    "XGBoost": {
+      "cv_roc_auc": 0.9117,
+      "test_roc_auc": 0.8984,
+      "test_f1_at_0.50": 0.5917,
+      "f1_threshold": 0.2685,
+      "test_f1_at_tuned_threshold": 0.6034,
+      "best_params": {
+        "colsample_bytree": 0.9261845713819337,
+        "gamma": 1.4137146876952342,
+        "learning_rate": 0.08880965698768718,
+        "max_depth": 2,
+        "min_child_weight": 5,
+        "n_estimators": 380,
+        "reg_lambda": 2.0051831708723897,
+        "subsample": 0.9659838702175123
+      }
+    },
+    "CatBoost": {
+      "cv_roc_auc": 0.914,
+      "test_roc_auc": 0.8983,
+      "test_f1_at_0.50": 0.593,
+      "f1_threshold": 0.3413,
+      "test_f1_at_tuned_threshold": 0.6389,
+      "best_params": {
+        "depth": 2,
+        "iterations": 280,
+        "l2_leaf_reg": 13.146443027030747,
+        "learning_rate": 0.0767539109585377,
+        "random_strength": 1.351497755908629,
+        "subsample": 0.6053059844639466
+      }
+    }
+  },
+  "feature_importance": {
+    "debt_to_income_ratio": 0.27356,
+    "past_default_count": 0.13474,
+    "credit_utilisation_last_6m": 0.13158,
+    "annual_income": 0.0865,
+    "age": 0.06688,
+    "loan_type_credit_card": 0.06507,
+    "loan_type_personal_loan": 0.06266,
+    "loan_type_auto_loan": 0.05348,
+    "loan_type_mortgage": 0.04952,
+    "credit_limit": 0.02828,
+    "months_on_book": 0.02591,
+    "avg_revolving_balance_last_6m": 0.02184,
+    "macro_interest_rate": 0.0
+  }
+}

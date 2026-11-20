@@ -1,0 +1,35 @@
+MODEL BENCHMARK: XGBoost vs CatBoost
+============================================================
+
+   model  cv_roc_auc  test_roc_auc  test_f1@0.50  f1_threshold  test_f1@tuned
+ XGBoost      0.9117        0.8984        0.5917        0.2685         0.6034
+CatBoost      0.9140        0.8983        0.5930        0.3413         0.6389
+
+------------------------------------------------------------
+XGBoost - classification report on test set (threshold = 0.269)
+              precision    recall  f1-score   support
+
+ non-default      0.959     0.936     0.947       885
+     default      0.551     0.667     0.603       105
+
+    accuracy                          0.907       990
+   macro avg      0.755     0.801     0.775       990
+weighted avg      0.916     0.907     0.911       990
+
+Best parameters: {"colsample_bytree": 0.9261845713819337, "gamma": 1.4137146876952342, "learning_rate": 0.08880965698768718, "max_depth": 2, "min_child_weight": 5, "n_estimators": 380, "reg_lambda": 2.0051831708723897, "subsample": 0.9659838702175123}
+
+------------------------------------------------------------
+CatBoost - classification report on test set (threshold = 0.341)
+              precision    recall  f1-score   support
+
+ non-default      0.959     0.953     0.956       885
+     default      0.622     0.657     0.639       105
+
+    accuracy                          0.921       990
+   macro avg      0.790     0.805     0.797       990
+weighted avg      0.923     0.921     0.922       990
+
+Best parameters: {"depth": 2, "iterations": 280, "l2_leaf_reg": 13.146443027030747, "learning_rate": 0.0767539109585377, "random_strength": 1.351497755908629, "subsample": 0.6053059844639466}
+
+============================================================
+CHAMPION (highest test ROC-AUC): XGBoost (0.8984)
